@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     
+    //MARK: - Private Var
+    private let viewModel = WeatherViewModel(serviceApi: ServiceManager.shared)
+    
     //MARK: - Life cyle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,18 +27,17 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
- 
 }
 
-//MARK: - private methods
+//MARK: - private methods User Interface
 private extension ViewController{
     //Update UI
     func hiddenSearchTextField(){
-        print(searchTextField.text!)
         searchTextField.placeholder = "Country"
+        fetchWeather(country: searchTextField.text!)
         searchTextField.endEditing(true)
     }
+    
     //Actions
     @IBAction func searchCountryPressed(_ sender: UIButton) {
         hiddenSearchTextField()
@@ -43,6 +45,23 @@ private extension ViewController{
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {
         
+    }
+}
+
+//MARK: - private methods service
+private extension ViewController {
+    func fetchWeather(country countryName: String){
+        viewModel.fecthWeather(countryName, completion: {
+            let temp = self.viewModel.fetchTemp()
+            let name = self.viewModel.fetchName()
+            
+            if (temp != nil && name != nil) {
+                DispatchQueue.main.async {
+                    self.temperatureLabel.text = "\(String(describing: temp!))" + " °C"
+                    self.cityLabel.text = name!
+                }
+            }
+        })
     }
 }
 
