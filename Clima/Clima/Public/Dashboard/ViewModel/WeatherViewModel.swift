@@ -11,6 +11,7 @@ class WeatherViewModel {
     //MARK: - Private var
     private var serviceApi: ServiceManager
     private var weather: WeatherModel?
+    private var imageNamed: String?
     
     //MARK: - Initialize ViewModel
     init(serviceApi: ServiceManager) {
@@ -18,14 +19,35 @@ class WeatherViewModel {
     }
 }
 
+//MARK: - Private methods
+private extension WeatherViewModel {
+    func updateWeatherModel(weatherData: WeatherData){
+        if let id = weatherData.weather.first?.id {
+            self.weather = WeatherModel(name: weatherData.name, temp: weatherData.main.temp, conditionID:id)
+        }
+    }
+}
+
 //MARK: - Public methods
 extension WeatherViewModel {
     // Fetch weather service
-    func fecthWeather(_ country: String, completion: @escaping () -> (Void)) {
+    func fecthWeather(with country: String, completion: @escaping () -> (Void)) {
         serviceApi.fetchWeather(country) { result in
             switch result {
             case .success(let weatherObjcet):
-                self.weather = weatherObjcet
+                self.updateWeatherModel(weatherData: weatherObjcet)
+                break
+            case .failure(_): break
+            }
+            completion()
+        }
+    }
+    
+    func fetchWeather(with lat: Double, long: Double, completion: @escaping()->(Void)) {
+        serviceApi.fetchWeather(with: lat, long: long) { result in
+            switch result {
+            case .success(let weatherObjcet):
+                self.updateWeatherModel(weatherData: weatherObjcet)
                 break
             case .failure(_): break
             }
@@ -34,20 +56,16 @@ extension WeatherViewModel {
     }
     
     // Fetch temp
-    func fetchTemp() -> Double? {
-        if let weather = weather {
-            return weather.main.temp
-        }else {
-            return nil
-        }
+    func fetchTemp() -> String {
+        return weather!.tempString
     }
     
     // Fetch Name
-    func fetchName() -> String? {
-        if let weather = weather {
-            return weather.name
-        }else {
-            return nil
-        }
+    func fetchName() -> String {
+        return weather!.name
+    }
+    
+    func fetchImageNamed() -> String {
+        return weather!.imageName
     }
 }
