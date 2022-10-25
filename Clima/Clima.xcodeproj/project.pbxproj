@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D305AE429082E870088A66C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D305AE329082E870088A66C /* WeatherModel.swift */; };
 		2DA8E1EF290033D200822710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1EE290033D200822710 /* AppDelegate.swift */; };
 		2DA8E1F1290033D200822710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F0290033D200822710 /* SceneDelegate.swift */; };
-		2DA8E1F3290033D200822710 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F2290033D200822710 /* ViewController.swift */; };
+		2DA8E1F3290033D200822710 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F2290033D200822710 /* DashboardViewController.swift */; };
 		2DA8E1F6290033D200822710 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F4290033D200822710 /* Main.storyboard */; };
 		2DA8E1F8290033D700822710 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F7290033D700822710 /* Assets.xcassets */; };
 		2DA8E1FB290033D700822710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F9290033D700822710 /* LaunchScreen.storyboard */; };
@@ -18,7 +19,7 @@
 		2DA8E212290033D700822710 /* ClimaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E211290033D700822710 /* ClimaUITestsLaunchTests.swift */; };
 		2DA8E22B2901872000822710 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E22A2901872000822710 /* ServiceManager.swift */; };
 		2DA8E22D29018ABE00822710 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E22C29018ABE00822710 /* WeatherViewModel.swift */; };
-		2DA8E22F29018E5700822710 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E22E29018E5700822710 /* WeatherModel.swift */; };
+		2DA8E22F29018E5700822710 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E22E29018E5700822710 /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D305AE329082E870088A66C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		2DA8E1EB290033D200822710 /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8E1EE290033D200822710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA8E1F0290033D200822710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2DA8E1F2290033D200822710 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2DA8E1F2290033D200822710 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2DA8E1F5290033D200822710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DA8E1F7290033D700822710 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DA8E1FA290033D700822710 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,7 +56,7 @@
 		2DA8E211290033D700822710 /* ClimaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2DA8E22A2901872000822710 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		2DA8E22C29018ABE00822710 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
-		2DA8E22E29018E5700822710 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		2DA8E22E29018E5700822710 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +181,7 @@
 		2DA8E223290035B700822710 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2DA8E1F2290033D200822710 /* ViewController.swift */,
+				2DA8E1F2290033D200822710 /* DashboardViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,7 +197,8 @@
 		2DA8E225290035CA00822710 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2DA8E22E29018E5700822710 /* WeatherModel.swift */,
+				2DA8E22E29018E5700822710 /* WeatherData.swift */,
+				2D305AE329082E870088A66C /* WeatherModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,8 +335,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA8E22D29018ABE00822710 /* WeatherViewModel.swift in Sources */,
-				2DA8E1F3290033D200822710 /* ViewController.swift in Sources */,
-				2DA8E22F29018E5700822710 /* WeatherModel.swift in Sources */,
+				2DA8E1F3290033D200822710 /* DashboardViewController.swift in Sources */,
+				2DA8E22F29018E5700822710 /* WeatherData.swift in Sources */,
+				2D305AE429082E870088A66C /* WeatherModel.swift in Sources */,
 				2DA8E1EF290033D200822710 /* AppDelegate.swift in Sources */,
 				2DA8E1F1290033D200822710 /* SceneDelegate.swift in Sources */,
 				2DA8E22B2901872000822710 /* ServiceManager.swift in Sources */,

@@ -2,62 +2,39 @@
 //  WeatherModel.swift
 //  Clima
 //
-//  Created by Hugo Regadas on 20/10/2022.
+//  Created by Hugo Regadas on 25/10/2022.
 //
 
 import Foundation
 
-
-class WeatherModel : Decodable {
-    let main: WeatherMain
-    let name: String
-    let cod: Int
-    let id: Int
-    let timezone : Int
-    let sys: WeatherSys
-    let dt: Int
-    let clouds: WeatherClouds
-    let wind: WeatherWind
-    let visibility: Int
-    let base: String
-    let weather: [WeatherArray]
-    let coord: WeatherCoord
-}
-
-struct WeatherMain: Decodable {
-    let temp: Double
-    let feels_like: Double
-    let temp_min: Double
-    let temp_max: Double
-    let pressure: Double
-    let humidity: Double
-}
-
-struct WeatherWind : Decodable {
-    let speed: Double
-    let deg: Double
-}
-
-struct WeatherClouds : Decodable {
-    let all: Int
-}
-
-struct WeatherSys : Decodable {
-    let type: Int
-    let id: Int
-    let country: String
-    let sunrise: Int
-    let sunset: Int
-}
-
-struct WeatherArray : Decodable {
-    let id: Int
-    let main: String
-    let description: String
-    let icon: String
-}
-
-struct WeatherCoord: Decodable {
-    let lon : Double
-    let lat : Double
+struct WeatherModel {
+    //Constants 
+    let name : String
+    let temp : Double
+    let conditionID : Int
+    
+    //Computed Propertys
+    var imageName : String {
+        switch conditionID {
+        case 200...232:
+            return "cloud.bolt.rain.fill"
+        case 300...321:
+            return "cloud.drizzle.fill"
+        case 500...531:
+            return "cloud.rain.fill"
+        case 600...622:
+            return "cloud.snow.fill"
+        case 701...781:
+            return "tornado.circle.fill"
+        case 800:
+            return "sun.max.fill"
+        case 801...804:
+            return "cloud.fill"
+        default:
+            return "cloud.fill"
+        }
+    }
+    var tempString: String {
+        return String(format: "%.1f ºC", temp)
+    }
 }

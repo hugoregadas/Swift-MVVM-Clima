@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class DashboardViewController: UIViewController {
     //MARK: - IBoutlets
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var searchTextField: UITextField!
@@ -17,10 +18,16 @@ class ViewController: UIViewController {
     
     //MARK: - Private Var
     private let viewModel = WeatherViewModel(serviceApi: ServiceManager.shared)
+    private let locationManager = CLLocationManager()
     
     //MARK: - Life cyle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
         searchTextField.delegate = self
     }
     
@@ -30,11 +37,11 @@ class ViewController: UIViewController {
 }
 
 //MARK: - private methods User Interface
-private extension ViewController{
+private extension DashboardViewController{
     //Update UI
     func hiddenSearchTextField(){
         searchTextField.placeholder = "Country"
-        fetchWeather(country: searchTextField.text!)
+        fetchWeather(with: searchTextField.text!)
         searchTextField.endEditing(true)
     }
     
@@ -44,29 +51,30 @@ private extension ViewController{
     }
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {
-        
+        locationManager.requestLocation()
     }
 }
 
 //MARK: - private methods service
-private extension ViewController {
-    func fetchWeather(country countryName: String){
-        viewModel.fecthWeather(countryName, completion: {
-            let temp = self.viewModel.fetchTemp()
-            let name = self.viewModel.fetchName()
-            
-            if (temp != nil && name != nil) {
-                DispatchQueue.main.async {
-                    self.temperatureLabel.text = "\(String(describing: temp!))" + " °C"
-                    self.cityLabel.text = name!
-                }
-            }
+private extension DashboardViewController {
+    func fetchWeather(with countryName: String){
+        viewModel.fecthWeather(with: countryName, completion: {
+            self.updateUserInterface()
         })
+    }
+    
+    
+    func updateUserInterface() {
+        DispatchQueue.main.async {
+            self.temperatureLabel.text = self.viewModel.fetchTemp()
+            self.cityLabel.text = self.viewModel.fetchName()
+            self.containerImage.image = UIImage(systemName: self.viewModel.fetchImageNamed())
+        }
     }
 }
 
 //MARK: - UITextfield Delegate
-extension ViewController : UITextFieldDelegate {
+extension DashboardViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         hiddenSearchTextField()
         return true
@@ -83,6 +91,24 @@ extension ViewController : UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.text = ""
+    }
+}
+
+//MARK: - CoreLocation Delegate
+extension DashboardViewController : CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationManager.stopUpdatingLocation()
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            viewModel.fetchWeather(with: lat, long: lon) {
+                self.updateUserInterface()
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
 }
 
