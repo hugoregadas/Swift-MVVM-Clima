@@ -43,7 +43,7 @@ private extension DashboardViewController{
     
     //Update UI
     func hiddenSearchTextField(){
-        searchTextField.placeholder = "Country"
+        searchTextField.placeholder = NSLocalizedString("Country", comment: "")
         fetchWeather(with: searchTextField.text!)
         searchTextField.endEditing(true)
     }
@@ -87,7 +87,7 @@ extension DashboardViewController : UITextFieldDelegate {
         if (textField.text != "") {
             return true
         }else {
-            textField.placeholder = "Search Country"
+            textField.placeholder = NSLocalizedString("Search_Country", comment: "")
             return false
         }
     }

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Clima
+
+  Created by Hugo Regadas on 26/10/2022.
+  
+*/
+
+//MARK: - DashBoard ViewController
+
+"Search_Country" = "Search city";
+"Country" = "City";
