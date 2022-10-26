@@ -13,8 +13,8 @@ struct WeatherModel {
     let temp : Double
     let conditionID : Int
     
-    //Computed Propertys
-    var imageName : String {
+    //Lazy vares
+    lazy var imageName : String = {
         switch conditionID {
         case 200...232:
             return "cloud.bolt.rain.fill"
@@ -33,8 +33,9 @@ struct WeatherModel {
         default:
             return "cloud.fill"
         }
-    }
-    var tempString: String {
+    }()
+    
+    lazy var tempString: String = {
         return String(format: "%.1f ºC", temp)
-    }
+    }()
 }
