@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-class ServiceManager {
+class ServiceManager : ServiceManagerProtocol {
     //MARK: - Public methods
     static let shared = ServiceManager()
     

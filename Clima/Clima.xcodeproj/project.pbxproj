@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D305AE429082E870088A66C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D305AE329082E870088A66C /* WeatherModel.swift */; };
+		2D5217D629097443002C3C86 /* ServiceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5217D529097443002C3C86 /* ServiceManagerProtocol.swift */; };
+		2D5217D9290974FF002C3C86 /* ServiceApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5217D8290974FF002C3C86 /* ServiceApiMock.swift */; };
 		2DA8E1EF290033D200822710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1EE290033D200822710 /* AppDelegate.swift */; };
 		2DA8E1F1290033D200822710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F0290033D200822710 /* SceneDelegate.swift */; };
 		2DA8E1F3290033D200822710 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F2290033D200822710 /* DashboardViewController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		2D305AE329082E870088A66C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		2D5217D529097443002C3C86 /* ServiceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagerProtocol.swift; sourceTree = "<group>"; };
+		2D5217D8290974FF002C3C86 /* ServiceApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApiMock.swift; sourceTree = "<group>"; };
 		2DA8E1EB290033D200822710 /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8E1EE290033D200822710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA8E1F0290033D200822710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D5217D7290974F1002C3C86 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				2D5217D8290974FF002C3C86 /* ServiceApiMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		2DA8E1E2290033D200822710 = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +148,9 @@
 		2DA8E21E2900346C00822710 /* API Services */ = {
 			isa = PBXGroup;
 			children = (
+				2D5217D7290974F1002C3C86 /* Mock */,
 				2DA8E22A2901872000822710 /* ServiceManager.swift */,
+				2D5217D529097443002C3C86 /* ServiceManagerProtocol.swift */,
 			);
 			path = "API Services";
 			sourceTree = "<group>";
@@ -335,10 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA8E22D29018ABE00822710 /* WeatherViewModel.swift in Sources */,
+				2D5217D9290974FF002C3C86 /* ServiceApiMock.swift in Sources */,
 				2DA8E1F3290033D200822710 /* DashboardViewController.swift in Sources */,
 				2DA8E22F29018E5700822710 /* WeatherData.swift in Sources */,
 				2D305AE429082E870088A66C /* WeatherModel.swift in Sources */,
 				2DA8E1EF290033D200822710 /* AppDelegate.swift in Sources */,
+				2D5217D629097443002C3C86 /* ServiceManagerProtocol.swift in Sources */,
 				2DA8E1F1290033D200822710 /* SceneDelegate.swift in Sources */,
 				2DA8E22B2901872000822710 /* ServiceManager.swift in Sources */,
 			);

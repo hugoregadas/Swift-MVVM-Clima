@@ -9,19 +9,24 @@ import Foundation
 
 class WeatherViewModel {
     //MARK: - Private var
-    private var serviceApi: ServiceManager
+    private var serviceApi: ServiceManagerProtocol
     private var weather: WeatherModel?
     private var imageNamed: String?
     
+    //MARK: - Public var
+    var serviceApiMock: ServiceManagerProtocol
+
+    
     //MARK: - Initialize ViewModel
-    init(serviceApi: ServiceManager) {
+    init(serviceApi: ServiceManagerProtocol) {
         self.serviceApi = serviceApi
+        self.serviceApiMock = serviceApi
     }
 }
 
 //MARK: - Private methods
-private extension WeatherViewModel {
-    func updateWeatherModel(weatherData: WeatherData){
+extension WeatherViewModel {
+    public func updateWeatherModel(weatherData: WeatherData){
         if let id = weatherData.weather.first?.id {
             self.weather = WeatherModel(name: weatherData.name, temp: weatherData.main.temp, conditionID:id)
         }
