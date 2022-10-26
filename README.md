@@ -1,6 +1,6 @@
 # Swift-MVVM-Clima
 
-Está aplicação recebe e trata informação de uma api () que retorna dados de clima. 
+Está aplicação recebe e trata informação de uma api (https://api.openweathermap.org) que retorna dados de clima. 
 
  ## Desenvolvimento
 
@@ -19,6 +19,7 @@ TAREFAS OBRIGATÓRIAS
 - [x] Arquitectura MVVM
 - [x] DarkMode
 - [x] Permite obter o clima com Lat e Lon
+- [x] Testes Unitários
 - [] Permite Mudar a linguagem da app
-- [] Testes Unitários
+
 

@@ -23,12 +23,7 @@ class DashboardViewController: UIViewController {
     //MARK: - Life cyle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
-        
-        searchTextField.delegate = self
+        initUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +33,14 @@ class DashboardViewController: UIViewController {
 
 //MARK: - private methods User Interface
 private extension DashboardViewController{
+    //Configure init UI
+    func initUI(){
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        searchTextField.delegate = self
+    }
+    
     //Update UI
     func hiddenSearchTextField(){
         searchTextField.placeholder = "Country"
