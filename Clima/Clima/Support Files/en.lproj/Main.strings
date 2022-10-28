@@ -1,0 +1,15 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gqs-SK-U5w"; */
+"gqs-SK-U5w.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Porto"; ObjectID = "jIs-kM-VGg"; */
+"jIs-kM-VGg.text" = "Porto";
+
+/* Class = "UITextField"; placeholder = "Country"; ObjectID = "mOY-y8-UlL"; */
+"mOY-y8-UlL.placeholder" = "Country";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "tkW-XI-PDQ"; */
+"tkW-XI-PDQ.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "21ºC"; ObjectID = "wwQ-BE-Qv2"; */
+"wwQ-BE-Qv2.text" = "21ºC";

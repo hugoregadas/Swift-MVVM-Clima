@@ -20,6 +20,6 @@ TAREFAS OBRIGATÓRIAS
 - [x] DarkMode
 - [x] Permite obter o clima com Lat e Lon
 - [x] Testes Unitários
-- [] Permite Mudar a linguagem da app
+- [x] Permite Mudar a linguagem da app
 
 

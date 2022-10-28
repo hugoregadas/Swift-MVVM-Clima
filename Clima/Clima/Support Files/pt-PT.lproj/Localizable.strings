@@ -6,7 +6,12 @@
   
 */
 
+//MARK: - Alertas
+"warnings_title" = "Alerta";
+"warnigs_details_Language" = "Para completar a mudança de idioma, necessita de reiniciar a applicação.";
+
 //MARK: - DashBoard ViewController
 
 "Search_Country" = "Procurar cidade";
 "Country" = "Cidade";
+

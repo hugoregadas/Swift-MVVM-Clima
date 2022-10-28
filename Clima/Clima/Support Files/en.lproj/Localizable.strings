@@ -6,6 +6,10 @@
   
 */
 
+//MARK: - Alertas
+"warnings_title" = "Warning";
+"warnigs_details_Language" = "To complete the language changes you need to restart the app.";
+
 //MARK: - DashBoard ViewController
 
 "Search_Country" = "Search city";

@@ -15,8 +15,16 @@ class WeatherViewModel {
     
     //MARK: - Public var
     var serviceApiMock: ServiceManagerProtocol
+    lazy var language = {
+        let value = LanguageManager.sharedLanguage.currentCode()
+        
+        if(value == "pt") {
+            return "EN"
+        }else{
+            return "PT"
+        }
+    }()
 
-    
     //MARK: - Initialize ViewModel
     init(serviceApi: ServiceManagerProtocol) {
         self.serviceApi = serviceApi
@@ -62,15 +70,27 @@ extension WeatherViewModel {
     
     // Fetch temp
     func fetchTemp() -> String {
-        return weather!.tempString
+        guard let tempString = weather?.tempString else {
+            return "Error"
+        }
+        return tempString
     }
     
     // Fetch Name
     func fetchName() -> String {
-        return weather!.name
+        guard let nameString = weather?.name else {
+            return "Error"
+        }
+        
+        return nameString
     }
     
+    // Fetch Image
     func fetchImageNamed() -> String {
-        return weather!.imageName
+        guard let imageString = weather?.imageName else {
+            return "Error"
+        }
+        
+        return imageString
     }
 }
