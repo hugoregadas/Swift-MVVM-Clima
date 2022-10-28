@@ -15,6 +15,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var containerImage: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var changeLanguageButton: UIButton!
     
     //MARK: - Private Var
     private let viewModel = WeatherViewModel(serviceApi: ServiceManager.shared)
@@ -33,29 +34,47 @@ class DashboardViewController: UIViewController {
 
 //MARK: - private methods User Interface
 private extension DashboardViewController{
-    //Configure init UI
+    //init User interface
     func initUI(){
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
         searchTextField.delegate = self
+        changeLanguageButton.setTitle(viewModel.language, for: .normal)
     }
     
     //Update UI
-    func hiddenSearchTextField(){
-        searchTextField.placeholder = "Country"
+    func fetchWeatherAndClearTextField(){
+        searchTextField.placeholder = NSLocalizedString("Country", comment: "")
         fetchWeather(with: searchTextField.text!)
         searchTextField.endEditing(true)
     }
     
+    func showWarningTitleChange(){
+        let alert = UIAlertController.init(title: NSLocalizedString("warnings_title", comment: ""),
+                                           message: NSLocalizedString("warnigs_details_Language", comment: ""),
+                                           preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(action)
+        
+        self.present(alert, animated: true)
+    }
+
     //Actions
-    @IBAction func searchCountryPressed(_ sender: UIButton) {
-        hiddenSearchTextField()
+    @IBAction func buttonLanguagePressed(_ sender: UIButton) {
+        if (changeLanguageButton.title(for: .normal) == "PT") {
+            LanguageManager.sharedLanguage.saveLanguageByCode(with: "pt")
+        }else {
+            LanguageManager.sharedLanguage.saveLanguageByCode(with: "en")
+        }
+        
+        showWarningTitleChange()
     }
     
     @IBAction func locationButtonPressed(_ sender: UIButton) {
         locationManager.requestLocation()
     }
+    
 }
 
 //MARK: - private methods service
@@ -65,7 +84,6 @@ private extension DashboardViewController {
             self.updateUserInterface()
         })
     }
-    
     
     func updateUserInterface() {
         DispatchQueue.main.async {
@@ -79,7 +97,7 @@ private extension DashboardViewController {
 //MARK: - UITextfield Delegate
 extension DashboardViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        hiddenSearchTextField()
+        fetchWeatherAndClearTextField()
         return true
     }
     
@@ -87,7 +105,7 @@ extension DashboardViewController : UITextFieldDelegate {
         if (textField.text != "") {
             return true
         }else {
-            textField.placeholder = "Search Country"
+            textField.placeholder = NSLocalizedString("Search_Country", comment: "")
             return false
         }
     }

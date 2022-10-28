@@ -34,8 +34,7 @@ struct WeatherModel {
             return "cloud.fill"
         }
     }()
-    
     lazy var tempString: String = {
-        return String(format: "%.1f ºC", temp)
-    }()
+    return String(format: "%.1f ºC", temp)
+}()
 }

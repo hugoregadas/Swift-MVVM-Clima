@@ -10,6 +10,8 @@
 		2D305AE429082E870088A66C /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D305AE329082E870088A66C /* WeatherModel.swift */; };
 		2D5217D629097443002C3C86 /* ServiceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5217D529097443002C3C86 /* ServiceManagerProtocol.swift */; };
 		2D5217D9290974FF002C3C86 /* ServiceApiMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5217D8290974FF002C3C86 /* ServiceApiMock.swift */; };
+		2D5217EE29098783002C3C86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D5217F029098783002C3C86 /* Localizable.strings */; };
+		2D9C42BC290BD889003D466D /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9C42BB290BD888003D466D /* LanguageManager.swift */; };
 		2DA8E1EF290033D200822710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1EE290033D200822710 /* AppDelegate.swift */; };
 		2DA8E1F1290033D200822710 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F0290033D200822710 /* SceneDelegate.swift */; };
 		2DA8E1F3290033D200822710 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA8E1F2290033D200822710 /* DashboardViewController.swift */; };
@@ -45,6 +47,11 @@
 		2D305AE329082E870088A66C /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		2D5217D529097443002C3C86 /* ServiceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManagerProtocol.swift; sourceTree = "<group>"; };
 		2D5217D8290974FF002C3C86 /* ServiceApiMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApiMock.swift; sourceTree = "<group>"; };
+		2D5217EF29098783002C3C86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2D5217F129098794002C3C86 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Main.strings"; sourceTree = "<group>"; };
+		2D5217F229098794002C3C86 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2D9C42BB290BD888003D466D /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		2DA1AE56290BD45A00013915 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		2DA8E1EB290033D200822710 /* Clima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA8E1EE290033D200822710 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA8E1F0290033D200822710 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +101,14 @@
 				2D5217D8290974FF002C3C86 /* ServiceApiMock.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		2DA1AE57290BD57D00013915 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D9C42BB290BD888003D466D /* LanguageManager.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		2DA8E1E2290033D200822710 = {
@@ -175,9 +190,11 @@
 		2DA8E2212900354B00822710 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				2DA1AE57290BD57D00013915 /* Extensions */,
 				2DA8E1F4290033D200822710 /* Main.storyboard */,
 				2DA8E1F7290033D700822710 /* Assets.xcassets */,
 				2DA8E1F9290033D700822710 /* LaunchScreen.storyboard */,
+				2D5217F029098783002C3C86 /* Localizable.strings */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";
@@ -303,6 +320,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-PT",
 			);
 			mainGroup = 2DA8E1E2290033D200822710;
 			productRefGroup = 2DA8E1EC290033D200822710 /* Products */;
@@ -322,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DA8E1FB290033D700822710 /* LaunchScreen.storyboard in Resources */,
+				2D5217EE29098783002C3C86 /* Localizable.strings in Resources */,
 				2DA8E1F8290033D700822710 /* Assets.xcassets in Resources */,
 				2DA8E1F6290033D200822710 /* Main.storyboard in Resources */,
 			);
@@ -351,6 +370,7 @@
 				2DA8E22D29018ABE00822710 /* WeatherViewModel.swift in Sources */,
 				2D5217D9290974FF002C3C86 /* ServiceApiMock.swift in Sources */,
 				2DA8E1F3290033D200822710 /* DashboardViewController.swift in Sources */,
+				2D9C42BC290BD889003D466D /* LanguageManager.swift in Sources */,
 				2DA8E22F29018E5700822710 /* WeatherData.swift in Sources */,
 				2D305AE429082E870088A66C /* WeatherModel.swift in Sources */,
 				2DA8E1EF290033D200822710 /* AppDelegate.swift in Sources */,
@@ -393,10 +413,21 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2D5217F029098783002C3C86 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D5217EF29098783002C3C86 /* en */,
+				2D5217F229098794002C3C86 /* pt-PT */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2DA8E1F4290033D200822710 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2DA8E1F5290033D200822710 /* Base */,
+				2D5217F129098794002C3C86 /* pt-PT */,
+				2DA1AE56290BD45A00013915 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -416,6 +447,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -476,6 +508,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

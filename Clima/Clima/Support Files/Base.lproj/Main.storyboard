@@ -21,16 +21,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkW-XI-PDQ" userLabel="searchButton">
-                                <rect key="frame" x="330" y="57" width="50" height="50"/>
+                                <rect key="frame" x="309.33333333333331" y="57" width="70.666666666666686" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="rSz-65-0Gm"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="taB-rk-DUp"/>
                                 </constraints>
                                 <color key="tintColor" name="ButtonsColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="PT"/>
                                 <connections>
-                                    <action selector="searchCountryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hn5-HE-p1q"/>
+                                    <action selector="buttonLanguagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ugG-VJ-HzO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqs-SK-U5w">
@@ -46,8 +46,8 @@
                                     <action selector="locationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mmm-FG-B0A"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Country" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOY-y8-UlL">
-                                <rect key="frame" x="70" y="57" width="250" height="50"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOY-y8-UlL">
+                                <rect key="frame" x="70.000000000000014" y="57" width="229.33333333333337" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="TextColor"/>
                                 <color key="textColor" name="TextColor"/>
@@ -101,6 +101,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="changeLanguageButton" destination="tkW-XI-PDQ" id="oP9-2E-JBd"/>
                         <outlet property="cityLabel" destination="jIs-kM-VGg" id="TmT-Qg-xHc"/>
                         <outlet property="containerImage" destination="lOU-lv-5Q0" id="a7W-Gl-14z"/>
                         <outlet property="locationButton" destination="gqs-SK-U5w" id="zcz-j0-HIR"/>
